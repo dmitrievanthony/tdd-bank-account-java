@@ -9,6 +9,6 @@ public class Account {
     }
 
     public void deposit(int amount) {
-        balance = balance + amount;
+        balance = Math.addExact(balance, amount);
     }
 }
