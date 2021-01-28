@@ -15,4 +15,12 @@ public class Account {
 
         balance = Math.addExact(balance, amount);
     }
+
+    public void withdraw(int amount) {
+        if (amount < 0) {
+            throw new RuntimeException("Cannot withdraw negative amount.");
+        }
+
+        balance = Math.subtractExact(balance, amount);
+    }
 }

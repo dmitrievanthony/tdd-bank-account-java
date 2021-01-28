@@ -48,4 +48,25 @@ public class AccountTest {
 
         assertThrows(RuntimeException.class, () -> account.deposit(-1));
     }
+
+    @Test
+    public void withdrawAmountFromAccount() {
+        Account account = new Account();
+        account.deposit(100);
+
+        account.withdraw(100);
+
+        assertThat(account.balance()).isEqualTo(0);
+    }
+
+    @Test
+    public void withdrawAmountFromAccountMultipleTimes() {
+        Account account = new Account();
+        account.deposit(100);
+
+        account.withdraw(10);
+        account.withdraw(10);
+
+        assertThat(account.balance()).isEqualTo(80);
+    }
 }
