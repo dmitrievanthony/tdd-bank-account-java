@@ -41,4 +41,11 @@ public class AccountTest {
 
         assertThat(account.balance()).isEqualTo(Integer.MAX_VALUE);
     }
+
+    @Test
+    public void depositNegativeAmountOnAccount() {
+        Account account = new Account();
+
+        assertThrows(RuntimeException.class, () -> account.deposit(-1));
+    }
 }

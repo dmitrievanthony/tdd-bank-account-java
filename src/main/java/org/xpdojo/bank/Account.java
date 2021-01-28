@@ -9,6 +9,10 @@ public class Account {
     }
 
     public void deposit(int amount) {
+        if (amount < 0) {
+            throw new RuntimeException("Cannot deposit negative amount.");
+        }
+
         balance = Math.addExact(balance, amount);
     }
 }
